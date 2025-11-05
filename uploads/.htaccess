@@ -1,0 +1,9 @@
+# Allow access to image files for display in web pages
+<FilesMatch "\.(jpg|jpeg|png|gif)$">
+    Require all granted
+</FilesMatch>
+
+# Deny access to all other files (like PHP files that might be uploaded)
+<FilesMatch "\.(php|php3|php4|php5|phtml|pl|py|cgi|scr|asp|jsp)$">
+    Require all denied
+</FilesMatch>

@@ -1,0 +1,44 @@
+/* File: public/assets/css/print.css */
+/* Aturan CSS ini hanya akan aktif ketika halaman dicetak. */
+
+@media print {
+    /* Sembunyikan semua elemen secara default */
+    body * {
+        visibility: hidden;
+    }
+
+    /* Tampilkan hanya area laporan dan semua isinya */
+    #laporan-area, #laporan-area * {
+        visibility: visible;
+    }
+
+    /* Posisikan area laporan ke bagian paling atas halaman cetak */
+    #laporan-area {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        margin: 20px; /* Beri sedikit margin pada kertas */
+    }
+
+    /* Sembunyikan elemen-elemen yang tidak perlu secara eksplisit */
+    #sidebar-wrapper, .navbar, .card-header, .btn, form {
+        display: none !important;
+    }
+    
+    .card {
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    /* Tampilkan judul yang tadinya tersembunyi */
+    .print-header {
+        display: block !important; /* Penting untuk membuatnya terlihat */
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    h1, h3, h5 {
+        color: #000 !important;
+    }
+}
